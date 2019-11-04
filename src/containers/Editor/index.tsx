@@ -1,10 +1,14 @@
-import React from 'react';
-import './index.scss';
+import { useState } from 'react';
+import wrapper from '../../utils/wrapper'
 
-const Editor: React.FC = () => {
-    return (
-        <section className="editor"></section>
-    );
+import { Editor } from '../../components'
+
+const WrappedEditor = () => {
+    const [val, setVal] = useState(0)
+    const States = { val }
+    const Actions = { setVal }
+
+    return wrapper(Editor, States, Actions)
 }
 
-export default Editor;
+export default WrappedEditor

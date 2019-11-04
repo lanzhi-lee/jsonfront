@@ -1,10 +1,14 @@
-import React from 'react';
-import './index.scss';
+import { useState } from 'react';
+import wrapper from '../../utils/wrapper'
 
-const SideBar: React.FC = () => {
-    return (
-        <div className="sidebar"></div>
-    );
+import { SideBar } from '../../components'
+
+const WrappedEditor = () => {
+    const [val, setVal] = useState(0)
+    const States = { val }
+    const Actions = { setVal }
+
+    return wrapper(SideBar, States, Actions)
 }
 
-export default SideBar;
+export default WrappedEditor

@@ -3,6 +3,7 @@ import { createContext } from 'react'
 import { TYPES } from './action-types'
 import { } from './actions'
 import { } from './reducers'
+import { combineReducers } from './combine'
 
 const Context = createContext({})
 
@@ -14,10 +15,10 @@ const DefaultData: defaultData = {
 
 }
 
-const actionCreaters = {
+const ActionCreaters = {
 
 }
 
-const Reducers = {}
+const Reducers = combineReducers({})
 
-export { Context, Reducers, DefaultData, actionCreaters, TYPES }
+export { ActionCreaters, Context, DefaultData, Reducers, TYPES }
